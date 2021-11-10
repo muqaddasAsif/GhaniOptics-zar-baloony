@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GhaniOptics zar&baloony</title>
+ <link rel="stylesheet" href="on.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="floating-wpp.min.js"></script>
+<link rel="stylesheet" href="floating-wpp.min.css">
+
+<style>
+body{
+  overflow: auto;
+}
+.container {
+  position: relative;
+}
+
+.image {
+border-radius:40%;
+padding:10px;
+float:left;
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  padding-top:1%;
+  padding-bottom:1%;
+}
+
+.middle1 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+ padding-top:14%;
+  left: 5%;
+
+}.middle2 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  padding-top:14%;
+  left: 35%;
+
+}.middle3 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+ padding-top: 15%;
+  left: 60%;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle1{
+  opacity: 1;
+}.container:hover .middle2 {
+  opacity: 1;
+}
+.container:hover .middle3 {
+  opacity: 1;
+}
+
+.text {
+  background-color:transparent;
+  color:white;
+  font-size: 20px;
+  padding: 10px 10px;
+}
+* 
+{
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  height: 300px; /* Should be removed. Only for demonstration */
+font-family:cursive;
+  font-size:20px ;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;}
+  }
+
+</style>
+</head>
+
+<body style="background:dimgrey ;">
+
+<div id="myDiv"></div>
+
+
+<img src="name.png" style="vertical-align: middle ;margin:0px 300px" width="45%" >
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="pic1.jpg" class="center">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="pic2.jpg" class="center">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="pic3.jpg" class="center">
+    <div class="text"></div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<br><br>
+<div class="container">
+  <img src="pic5.jpg" alt="Avatar" class="image" style="width:27%">
+  <div class="middle1">
+    <div class="text"><pre><b> computerized
+ eye testing
+ by refactionist</b></pre></div>
+  </div>
+</div>
+  <div class="container">
+  <img src="pic6.jpg" alt="Avatar" class="image" style="width:29%">
+  <div class="middle2">
+    <div class="text"><pre><b> All type of
+ frame & sunglasses
+ brands & casual</b></pre></div>
+  </div>
+</div>
+<div class="container">
+  <img src="pic7.jpg" alt="Avatar" class="image" style="width:27%">
+  <div class="middle3">
+    <div class="text"><pre><b> We deal all
+ kind of lenses
+ either  they are
+ contact or cosmetic</b></pre></div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="column" style="background-color:lightgrey;">
+    <h2>contact us</h2>
+    <p><b>Number<b><br>03009022577</p>
+    <p><b>Adress<b><br>
+    sheik yaseen tower,Abdara road,<br> peshwar Pakistan
+    </p>
+  </div>
+  <div class="column" style=" background-color:lightgray;">
+    <h2>Services</h2>
+    <p><b>Timings<b><br>10:00am to 8:00pm</p><p> computerized eye testing<br>Accurate dispacing of spaces & glasses</p>
+  </div>
+  <div class="column" style="background-color:lightgrey;">
+     <h2>About</h2>
+    <p> Optical Facility<br>Contact lense Specialist
+    </p>
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+  $(function () {
+    $('#myDiv').floatingWhatsApp({
+      phone: '03009022577',
+      showPopup:'True',
+      popupMessage:"Assalamualikum, How can I help You? ",
+      headerTitle:'GhaniOptics',
+      position:'right',
+    });
+  });
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+var modal = document.getElementById("myModal");
+
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+  
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";}
+
+
+  // When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+</html>
